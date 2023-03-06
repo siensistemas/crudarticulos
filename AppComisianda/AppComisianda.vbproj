@@ -48,6 +48,12 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -73,6 +79,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="api\dbapi.vb" />
+    <Compile Include="api\Parametro.vb" />
+    <Compile Include="clsclientes.vb" />
+    <Compile Include="clscombos.vb" />
+    <Compile Include="clspedidos.vb" />
+    <Compile Include="clsproductos.vb" />
+    <Compile Include="clsutilidades.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +93,31 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmclientes.Designer.vb">
+      <DependentUpon>frmclientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmclientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmeliminarpedidos.Designer.vb">
+      <DependentUpon>frmeliminarpedidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmeliminarpedidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGenerarPedido.Designer.vb">
+      <DependentUpon>FrmGenerarPedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGenerarPedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmproductos.Designer.vb">
+      <DependentUpon>frmproductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmproductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clsconexion.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -100,6 +138,18 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmclientes.resx">
+      <DependentUpon>frmclientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmeliminarpedidos.resx">
+      <DependentUpon>frmeliminarpedidos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGenerarPedido.resx">
+      <DependentUpon>FrmGenerarPedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmproductos.resx">
+      <DependentUpon>frmproductos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -118,6 +168,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
